@@ -3,4 +3,4 @@
 
 ## Eecs 442
 
-![Computer Vision]("eecs442_p1/README.md")
+[Computer Vision]("eecs442_p1/README.md")
