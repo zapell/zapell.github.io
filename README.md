@@ -1,6 +1,9 @@
 # Zach Apell
 
 ## Welcome to my website!  
+![me](./0.jpeg)
+[Linkedin](https://www.linkedin.com/in/zach-apell/)
+
 ## About Me
 I am currently a Senior at the University of Michigan studying Data Science.  I have taken courses in Computer Vision, Machine Learning, Data Mining, Applied Regression Analysis, Bayesian Data Analysis, Web Systems, Database Management Systems, and Honors Multivariable Calculus.  I have experience coding in a variety of languages but in my daily coursework I primarily use Python and R.
 
