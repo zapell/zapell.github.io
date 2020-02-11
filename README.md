@@ -2,6 +2,12 @@
 
 ## Welcome to my website!
 
-## Computer Vision
+### Computer Vision
 
 [Project 1: Image Alignment](./eecs442_p1/README.md)
+
+### Machine Learning
+
+### Spotify Analysis
+
+
