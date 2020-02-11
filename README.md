@@ -1,7 +1,7 @@
 # Zach Apell
 
 ## Welcome to my website!  
-![me](./0.jpeg)
+![me](./0.jpeg)   
 [Linkedin](https://www.linkedin.com/in/zach-apell/)
 
 ## About Me
