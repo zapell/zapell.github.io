@@ -1,0 +1,85 @@
+---
+title: "451_final_project"
+author: "Zach Apell"
+date: "12/7/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+diabetes = read.csv("diabetes.csv")
+summary(diabetes)
+```
+
+```{r}
+diabetes$Outcome = as.factor(diabetes$Outcome)
+```
+
+```{r}
+pairs(diabetes)
+```
+
+```{r}
+plot(diabetes$Outcome, diabetes$SkinThickness)
+```
+
+```{r}
+# bayesian logistic regression in stan
+tmp = filter(diabetes, Glucose != 0 , BloodPressure != 0 ,SkinThickness != 0 , Insulin != 0 ,BMI != 0)
+tmp
+```
+
+```{r}
+pairs(tmp)
+```
+
+```{r}
+plot(tmp$Outcome, tmp$SkinThickness, main="Cleaned Dataset Skinthickness vs Outcome")
+```
+```{r}
+scatterplot(tmp$Pregnancies, tmp$DiabetesPedigreeFunction, ylab="DPF", xlab="Num Pregnancies", main="Pregnancies vs DPF")
+```
+
+```{r}
+sum(tmp$Outcome == 0)
+sum(tmp$Outcome == 1)
+```
+
+```{r}
+install.packages("rstan")
+library(rstan)
+```
+```{r}
+nrow(tmp)
+as.numeric(as.character(tmp$Outcome))
+```
+
+```{r}
+dat = list(N = nrow(tmp),
+           p = 8,
+           outcome = as.numeric(as.character(tmp$Outcome)),
+           pregnancies = tmp$Pregnancies,
+           glucose = tmp$Glucose,
+           bloodPressure = tmp$BloodPressure,
+           skinThickness = tmp$SkinThickness,
+           insulin = tmp$Insulin,
+           bmi = tmp$BMI,
+           dpf = tmp$DiabetesPedigreeFunction,
+           age = tmp$Age
+           )
+
+file = "./log_reg.stan"
+stan_code = readChar(file, file.info(file)$size)
+```
+
+```{r}
+res = stan(model_code = stan_code, data=dat, chains = 4, iter = 5000, warmup = 500)
+traceplot(res, pars = c("beta", "alpha"))
+```
+```{r}
+plot(res)
+```
+
