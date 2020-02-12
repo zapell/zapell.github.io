@@ -1,0 +1,89 @@
+---
+title: "final project"
+author: "Zach Apell"
+date: "11/24/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+df = read.csv("2017-18_NBA_salary.csv")
+head(df)
+str(df)
+```
+
+```{r}
+# curve looks like rookie salaries
+#dfGraphs <- df
+#dfGraphs$rookie <- df %in% rookie
+plot(df$NBA_DraftNumber, df$Salary, xlab = "Draft Position", ylab= "Salary ($)", main="Salary by draft position")
+```
+```{r}
+cor(df$MP, df$Salary)
+cor(df$WS, df$Salary)
+```
+
+```{r}
+par(mfrow=c(1,2))
+plot(df$MP, df$Salary, xlab="MP", ylab="Salary", main="Salary vs MP (corr = .51)")
+plot(df$WS, df$Salary, xlab="Win Shares", ylab="Salary", main="Salary vs WS (corr=.59)")
+```
+
+```{r}
+plot(df$MP, df$WS)
+```
+
+```{r}
+plot(df$NBA_Country, df$Salary)
+```
+
+```{r}
+install.packages("pastecs")
+library(pastecs)
+```
+
+```{r}
+options(digits = 2)
+stat.desc(df)
+```
+
+```{r}
+summary(df)
+```
+
+```{r}
+plot(df$Age, df$Salary)
+
+```
+```{r}
+plot(df$VORP, df$Salary)
+text(Salary~VORP, labels=df$Player,data=df, cex=0.9, font=1)
+```
+
+```{r}
+rooks = df[(df$Age <= 25) & df$Salary < 8000000,]
+summary((rooks))
+rooks[rooks$Salary>6500000,]
+```
+```{r}
+vets = df[df$Age > 24 & df$Salary>8000000, ]
+summary(vets)
+```
+```{r}
+df = df[!(df$MP > 100 & df$G < 15),]
+```
+
+```{r}
+df[df$MP <20,]
+```
+```{r}
+df[!(df$G < 5 | df$MP < 10),]
+```
+
+```{r}
+install.packages('tidyverse')
+```
+

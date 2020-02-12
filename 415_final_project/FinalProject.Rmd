@@ -1,0 +1,319 @@
+---
+title: "Final Project"
+author: "Eshan"
+date: "December 2, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##libraries and packages
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(FNN)
+library(ISLR)
+library(SignifReg)
+library(boot)
+library(leaps)
+library(dplyr)
+```
+
+##Reading in data and dividing into veteran and rookie.
+
+```{r}
+data <- read.csv("2017-18_NBA_salary.csv")
+data$index <- c(1:485) #indices for all players
+data <- data[-c(225,226,38,30),] # the two extra kay felders and t who had NAs
+
+rownames(data) <- data$Player
+
+data <- data[,-c(1,6)] # getting rid of player name and team
+
+data <- data[!(data$MP > 100 & data$G < 15),] # Getting rid of major key players (Kawhi, Conley, Pat Bev)
+
+data <- data[!(data$MP < 10 | data$G < 5),] #Getting rid of weekly pickups who do not play
+```
+
+##Fixing data types
+
+```{r}
+#data$Player <- as.character(data$Player)
+data$Salary <- as.numeric(data$Salary)
+data$NBA_Country <- as.integer(as.factor(data$NBA_Country))
+data$NBA_DraftNumber <- as.numeric(data$NBA_DraftNumber)
+data$Age <- as.numeric((data$Age))
+#data$Tm <- as.character(data$Tm)
+data$G <- as.numeric(data$G)
+data$MP <- as.numeric(data$MP)
+data$PER <- as.numeric(data$PER)
+data$TS. <- as.numeric(data$TS.)
+data$X3PAr <- as.numeric(data$X3PAr)
+data$FTr <- as.numeric(data$FTr)
+data$ORB. <- as.numeric(data$ORB.)
+data$DRB. <- as.numeric(data$DRB.)
+data$TRB. <- as.numeric(data$TRB.)
+data$AST. <- as.numeric(data$AST.)
+data$STL. <- as.numeric(data$STL.)
+data$BLK. <- as.numeric(data$BLK.)
+data$TOV. <- as.numeric(data$TOV.)
+data$USG. <- as.numeric(data$USG.)
+data$OWS <- as.numeric(data$OWS)
+data$DWS <- as.numeric(data$DWS)
+data$WS <- as.numeric(data$WS)
+data$WS.48 <- as.numeric(data$WS.48)
+data$OBPM <- as.numeric(data$OBPM)
+data$DBPM <- as.numeric(data$DBPM)
+data$BPM <- as.numeric(data$BPM)
+data$VORP <- as.numeric(data$VORP)
+data$index <- as.numeric(data$index)
+```
+
+
+```{r}
+## indices of players that need to be moved
+rooktovet <- c(331,124,446,463,470,68,219,383,155,160)
+vettorook <- c(40,184,395,196,121,264,106,79,81,388,272,97,190)
+
+## splitting just by age
+rookie <- subset(data, Age < 25)
+veteran <- subset(data, Age > 24)
+
+## actual data rows of players that need to be moved
+rooktovetrows <- subset(rookie, index %in% rooktovet)
+vettorookrows <- subset(veteran, index %in% vettorook)
+
+## moving them
+rookie <- rbind(rookie,vettorookrows)
+rookie <- subset(rookie, !(index %in% rooktovet))
+veteran <- rbind(veteran,rooktovetrows)
+veteran <- subset(veteran, !(index %in% vettorook))
+```
+
+##Dividing veteran into training and testing data set
+
+```{r}
+set.seed(123)
+veteranID <- sample(nrow(veteran), floor(0.3*nrow(veteran)))
+veteranTrain <- veteran[-veteranID,]
+veteranTest <- veteran[veteranID,]
+#veteranTrain <- data.frame(data = veteranTrain)
+#veteranTrainSalary <- veteranTrain$Salary
+```
+
+##Forward selection
+
+```{r}
+#FullModel <- lm(Salary ~  , data = veteranTrain)
+
+#summary(FullModel)
+
+ModelForward = SignifReg(lm(Salary ~ 1 , data = veteranTrain), alpha = 0.05, direction = "forward", correction = "None", trace = F)
+
+summary(ModelForward)
+
+#ModelBackward = SignifReg(lm(Salary ~ . , data = veteranTrain), alpha = 0.05, direction = "backward", criterion = "p-value", correction = "None", trace = F)
+
+```
+
+```{r}
+#KNN
+veteranTrain = na.omit(veteranTrain)
+vet_knn.train = veteranTrain[,-27]
+vet_knn.trainX = vet_knn.train[,-1]
+vet_knn.trainy = vet_knn.train[,1]
+
+veteranTest = na.omit(veteranTest)
+vet_knn.test = veteranTest[,-27]
+vet_knn.testX = vet_knn.test[,-1]
+vet_knn.testy = vet_knn.test[,1]
+```
+
+```{r}
+plot(vet_knn.trainy~vet_knn.trainX$Age)
+```
+
+
+```{r}
+# compute column means and std for scaling purposes
+mean_train = colMeans(vet_knn.trainX[,])
+std_train =sqrt(diag(var(vet_knn.trainX[,])))
+
+# scale data using mean and std computed above
+X_train = scale(vet_knn.trainX[,], center = mean_train , scale = std_train)
+#X_train = cbind(X_train, vet_knn.trainX$NBA_Country)
+# scale testing data
+X_test = scale(vet_knn.testX[,], center = mean_train, scale = std_train)
+#X_test = cbind(X_test, vet_knn.testX$NBA_Country)
+```
+
+```{r}
+library("FNN")
+# vectors of train and test error
+train_err = c()
+test_err = c()
+# k values to be tested
+ks = seq(1:150)
+
+for (i in 1:length(ks)) {
+  # train knn on training data
+  knnTrain <-knn.reg(train = X_train, y = vet_knn.trainy, test = X_train, k = ks[i])
+  # compute training error
+  trainMSE <-mean((vet_knn.trainy-knnTrain$pred)^2)
+  train_err[i] = trainMSE
+  
+  # predict test data
+  knnTest <-knn.reg(train = X_train, y = vet_knn.trainy, test = X_test, k = ks[i])
+  # compute test error
+  testMSE <-mean((vet_knn.testy-knnTest$pred)^2)
+  test_err[i] = testMSE
+}
+```
+
+```{r}
+# plot train and test error as function of 1/k
+plot(train_err~ I(1/ks), type = "b", lwd = 2, col = "blue",
+     main = "Training and Test MSE for KNN", xlab = "1/K", 
+     ylab = "MSE")
+# Add the test MSE
+lines(test_err~ I(1/ks), type = "b", lwd = 2, col = "red")
+legend("topright", legend =c("Training KNN", "Test KNN"),  
+       cex = 0.75,col =c("blue", "red"), lwd =c(2, 2),
+       pch =c(1, 1), lty =c(1, 1))
+```
+```{r}
+options(digits = 3)
+min(test_err)
+which.min(test_err)
+train_err[13]
+```
+
+```{r}
+c = cor(veteran)
+install.packages('corrplot')
+library(corrplot)
+```
+```{r}
+corrplot(c)
+```
+```{r}
+install.packages('GGally')
+library(GGally)
+```
+
+
+```{r}
+library(car)
+mod = lm(Salary~., data=veteran)
+vif(mod)
+```
+```{r}
+mod2 = lm(Salary~NBA_Country+NBA_DraftNumber+Age+G+MP+PER+TS.+X3PAr+FTr+ORB.+DRB.+AST.+STL.+BLK.+TOV.+USG.+OWS+DWS+OBPM+DBPM+VORP, data=veteran)
+vif(mod2)
+```
+```{r}
+mod3 = lm(Salary~NBA_Country+NBA_DraftNumber+Age+G+MP+TS.+X3PAr+FTr+ORB.+DRB.+AST.+STL.+BLK.+TOV.+USG.+OWS+DWS, data=veteran)
+vif(mod3)
+```
+```{r}
+mod4 = lm(Salary~PER+VORP+WS+BPM+USG.+FTr, data=veteran)
+vif(mod4)
+```
+
+
+
+```{r}
+library(dplyr)
+fs_train = select(veteranTrain, NBA_Country,NBA_DraftNumber,Age,G,MP,TS.,X3PAr,FTr,ORB.,DRB.,AST.,STL.,BLK.,TOV.,USG.,OWS,DWS)
+fs_test = select(veteranTest, NBA_Country,NBA_DraftNumber,Age,G,MP,TS.,X3PAr,FTr,ORB.,DRB.,AST.,STL.,BLK.,TOV.,USG.,OWS,DWS)
+```
+
+```{r}
+# compute column means and std for scaling purposes
+mean_train.fs = colMeans(fs_train[,])
+std_train.fs =sqrt(diag(var(fs_train[,])))
+
+# scale data using mean and std computed above
+fs.X_train = scale(fs_train[,], center = mean_train.fs , scale = std_train.fs)
+#X_train = cbind(X_train, vet_knn.trainX$NBA_Country)
+# scale testing data
+fs.X_test = scale(fs_test[,], center = mean_train.fs, scale = std_train.fs)
+#X_test = cbind(X_test, vet_knn.testX$NBA_Country)
+```
+
+```{r}
+library("FNN")
+# vectors of train and test error
+fs.train_err = c()
+fs.test_err = c()
+# k values to be tested
+ks = seq(1:150)
+
+for (i in 1:length(ks)) {
+  # train knn on training data
+  fs.knnTrain <-knn.reg(train = fs.X_train, y = vet_knn.trainy, test = fs.X_train, k = ks[i])
+  # compute training error
+  fs.trainMSE <-mean((vet_knn.trainy-fs.knnTrain$pred)^2)
+  fs.train_err[i] = fs.trainMSE
+  
+  # predict test data
+  fs.knnTest <-knn.reg(train = fs.X_train, y = vet_knn.trainy, test = fs.X_test, k = ks[i])
+  # compute test error
+  fs.testMSE <-mean((vet_knn.testy-fs.knnTest$pred)^2)
+  fs.test_err[i] = fs.testMSE
+}
+```
+
+```{r}
+# plot train and test error as function of 1/k
+plot(fs.train_err~ ks, type = "b", lwd = 2, col = "blue",
+     main = "Training and Test MSE for KNN", xlab = "1/K", 
+     ylab = "MSE")
+# Add the test MSE
+lines(fs.test_err~ ks, type = "b", lwd = 2, col = "red")
+legend("topright", legend =c("Training KNN", "Test KNN"),  
+       cex = 0.75,col =c("blue", "red"), lwd =c(2, 2),
+       pch =c(1, 1), lty =c(1, 1))
+```
+
+
+```{r}
+min(fs.test_err)
+which.min(fs.test_err)
+```
+
+```{r}
+plot((1/Salary)~NBA_DraftNumber, data=rookie)
+abline(lm((1/rookie$Salary)~rookie$NBA_DraftNumber), col=28)
+```
+
+```{r}
+install.packages("caret")
+library(caret)
+```
+
+```{r}
+knn_cv = cbind(X_train, vet_knn.trainy)
+train_control<-trainControl(method="cv", number=10)
+k_rng = data.frame(k = seq(1,146))
+res_CV_KNN <- train(vet_knn.trainy~.,
+                    method   = "knn",
+                    tuneGrid   = k_rng,
+                    trControl  = train_control,
+                    metric     = "MSE",
+                    data       = knn_cv)
+```
+```{r}
+print(res_CV_KNN)
+```
+```{r}
+plot((res_CV_KNN$results$RMSE)^2~k_rng$k, type ='b', main ='10-fold CV MSE vs k',xlab ='K', ylab ='MSE')
+```
+
+```{r}
+res_CV_KNN$results$RMSE[7]^2
+```
+
