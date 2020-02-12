@@ -1,8 +1,8 @@
 # Zach Apell
 
 ## Welcome to my website!
-E-mail: zachapell220@gmail.com
-Phone: (856) 298-0064
+E-mail: zachapell220@gmail.com  
+Phone: (856) 298-0064  
 [Linkedin](https://www.linkedin.com/in/zach-apell/)  
 ![me](./0.jpeg)   
 
