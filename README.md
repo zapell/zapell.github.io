@@ -16,13 +16,13 @@ Outside of work and school, I am a huge sports junkie, specifically Philadelphia
 
 
 ### Computer Vision
-
 [Project 1: Image Alignment](./eecs442_p1/README.md)
 
 ### Machine Learning
 The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.
 
 ### Spotify Analysis
+
 
 ### NBA Salary Analysis
 
