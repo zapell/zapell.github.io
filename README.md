@@ -27,7 +27,7 @@ The class focused on the theory and implementation of state of the art machine l
 
 
 ### NBA Salary Analysis
-
+[NBA](./415_final_project/overview.md)
 
 ### Bayesian Logistic Regression
 
