@@ -24,6 +24,9 @@ The class focused on the theory and implementation of state of the art machine l
 
 ### Spotify Analysis
 
+### NBA Salary Analysis
+
+
 ### Bayesian Logistic Regression
 
 [Predicting Diabetes](./final_project/overview.md)
