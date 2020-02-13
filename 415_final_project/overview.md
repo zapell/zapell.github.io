@@ -22,3 +22,13 @@ I tried out 5 different regression techniques on this data to find the best mode
 
 The results are displayed below.  
 
+
+Choosing the best model involved determining the model that best balanced test error, interpretability, and the handling of multicollinearity across the variables. I first narrowed the model down to Ridge, Lasso, and PCR due to their ability to deal with multicollinearity. I chose Ridge over Lasso because it had a lower test error. Finally, I chose Ridge over PCR because of its much better interpretability.
+
+### Application to Rookies
+Running the model on the rookie dataset determined that 174 out of 177 players on their rookie deals were "underpaid".  While 174 appears to be an extremely high number, it is not as striking as it may seem at first. Looking at the difference between the model’s expected salary for a player and actual salary does not take into account the difference between the salary systems for rookies and veterans. Rookie salaries are determined by the salary cap that year. In the 2017/2018 season it was impossible for a player on their rookie contract to have a salary higher than $7,600,000. However, the model predicted 87 out 177 salaries above $7,600,000. This means that the amount of underpaid rookies is caused by an overall undervaluing of rookies in the NBA’s salary system rather than a misvaluing of players by individual teams.  
+I used this idea to look at the top 10 "undervalued" players on rookie deals and compare the predicted salary to the deals the players have actually signed (if they have signed one).  Since these new deals were signed in different years, the resulting predictions had to be adjusted depending on the year the deal was signed to account for the yearly increase in salary cap.
+
+The top underpaid players are displayed below.  
+![rookies](./rookie_predictions.png)
+
