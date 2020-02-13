@@ -11,4 +11,8 @@ The blue points are players under 25, the majority of whom are on rookie contrac
 
 The correlation matrix below shows which advanced metrics are correlated with each other.  
 
-![matrix](./salary_correlation.png)
+![matrix](./salary_correlation.png)  
+
+Some of the advanced metrics that are increasingly popular in the NBA analytics community like PER and VORP are highly correlated with salary which makes sense.  One of the more interesting correlations is minutes played with salary.  This indicates players who play more make more.  However, minutes played is not as correlated as the advanced metrics.  This could be due to lesser paid players, including rookies, being important contributors to the team.
+
+
