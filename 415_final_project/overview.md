@@ -13,6 +13,8 @@ The correlation matrix below shows which advanced metrics are correlated with ea
 
 ![matrix](./salary_correlation.png)  
 
-Some of the advanced metrics that are increasingly popular in the NBA analytics community like PER and VORP are highly correlated with salary which makes sense.  One of the more interesting correlations is minutes played with salary.  This indicates players who play more make more.  However, minutes played is not as correlated as the advanced metrics.  This could be due to lesser paid players, including rookies, being important contributors to the team.
+Some of the advanced metrics that are increasingly popular in the NBA analytics community like PER and VORP are highly correlated with salary which makes sense.  One of the more interesting correlations is minutes played with salary.  This indicates players who play more make more.  However, minutes played is not as correlated as the advanced metrics.  This could be due to lesser paid players, including rookies, being important contributors to the team.  This is evident in the bottom right corners of the following plots of minutes played and win shares vs salary.
+
+![mp+ws](./ws_vs_mp.png)  
 
 
