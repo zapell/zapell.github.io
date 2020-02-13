@@ -30,5 +30,12 @@ Running the model on the rookie dataset determined that 174 out of 177 players o
 I used this idea to look at the top 10 "undervalued" players on rookie deals and compare the predicted salary to the deals the players have actually signed (if they have signed one).  Since these new deals were signed in different years, the resulting predictions had to be adjusted depending on the year the deal was signed to account for the yearly increase in salary cap.
 
 The top underpaid players are displayed below.  
-![rookies](./rookie_predictions.png)
+![rookies](./rookie_predictions.png)  
 
+(I strongly disagree with the model that Joel Embiid and Ben Simmons are overpaid)
+
+### Limitations
+A major inconsistency of the data is that not every contract signed was signed in the same year.  This is an issue because there is an increase in the salary cap every year so contracts signed in future years will be worth more money.  Specifically, in the summer of 2016 there was a huge increase in the salary cap and this led to bigger contracts given to players who would have not received as large contacts in the past.  
+Another variation in the data is due to the "gargabe time" players who can have great advanced statistics, but low salary.  Most of these players were eliminated through preprocessing by setting a minimum amount of minutes and games played but there is a possibility of added noise due to these players.
+Another thing that is hard to quantify and factor into the model is market size.  Small market teams have to pay players more compared to big market teams who can get away with paying top players less money.
+The last limiting factor is that this is only a single season's worth of data.  More seasons and accounting for the salary cap each year would improve the accuracy of the model.
