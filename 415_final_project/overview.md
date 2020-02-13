@@ -22,7 +22,7 @@ I tried out 5 different regression techniques on this data to find the best mode
 
 The results are displayed below.  
 
-| Model | Training Error ($\times10^{13}$) | Test Error ($\times10^{13}$) |
+| Model | Training Error (10^13) | Test Error (10^13) |
 |---|---|---|
 | Full | 2.19 | 2.71 |
 | KNN (K = 7) | 3.15 | 3.32 |
