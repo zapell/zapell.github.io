@@ -24,10 +24,10 @@ The results are displayed below.
 
 | Model | Training Error (10^13) | Test Error (10^13) |
 |---|---|---|
-| Full | 2.19 | 2.71 |
+| Full OLS | 2.19 | 2.71 |
 | KNN (K = 7) | 3.15 | 3.32 |
-| Forward | 2.61 | 3.11 |
-| Backward | 2.99 | 3.49 |
+| Forward Selection OLS | 2.61 | 3.11 |
+| Backward Selection OLS | 2.99 | 3.49 |
 | Ridge (lambda = 5336699) | 2.64 | 3.15 |
 | Lasso (lambda = 823535.5) | 2.77 | 3.29 |
 | PCR (ncomps = 22) | 2.11 | 5.41 |
