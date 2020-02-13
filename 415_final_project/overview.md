@@ -17,4 +17,8 @@ Some of the advanced metrics that are increasingly popular in the NBA analytics 
 
 ![mp+ws](./ws_vs_mp.png)  
 
+### Models
+I tried out 5 different regression techniques on this data to find the best model: OLS, Ridge Regression, LASSO Regression, KNN Regression, and PCR.  For OLS, forward and backward selection was used to determine the model and for the other four models cross-validation was used to determine optimal hyperparameters.
+
+The results are displayed below.  
 
