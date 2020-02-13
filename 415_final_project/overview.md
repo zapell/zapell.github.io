@@ -22,6 +22,15 @@ I tried out 5 different regression techniques on this data to find the best mode
 
 The results are displayed below.  
 
+| Model | Training Error ($\times10^{13}$) | Test Error ($\times10^{13}$) |
+|---|---|---|
+| Full | 2.19 | 2.71 |
+| KNN (K = 7) | 3.15 | 3.32 |
+| Forward | 2.61 | 3.11 |
+| Backward | 2.99 | 3.49 |
+| Ridge ($\lambda$ = 5336699) | 2.64 | 3.15 |
+| Lasso ($\lambda$ = 823535.5) | 2.77 | 3.29 |
+| PCR (ncomps = 22) | 2.11 | 5.41 |
 
 Choosing the best model involved determining the model that best balanced test error, interpretability, and the handling of multicollinearity across the variables. I first narrowed the model down to Ridge, Lasso, and PCR due to their ability to deal with multicollinearity. I chose Ridge over Lasso because it had a lower test error. Finally, I chose Ridge over PCR because of its much better interpretability.
 
