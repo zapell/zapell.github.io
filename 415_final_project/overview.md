@@ -8,3 +8,7 @@ Using Tableau I made a visualization of salary vs draft position.
 
 ![visual](./draft_position_vs_salary.png)  
 The blue points are players under 25, the majority of whom are on rookie contracts.  The reason there is a veteran/rookie split is there is a clear trend by draft pick for rookie contracts and it is clear that the only determining factors for their deals are draft position and draft year.  The few players under 25 not on rookie deals were moved to the veteran dataset as well as the few players over 25 who were on rookie deals still.
+
+The correlation matrix below shows which advanced metrics are correlated with each other.  
+
+![matrix](./salary_correlation.png)
