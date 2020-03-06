@@ -23,3 +23,24 @@ view to produce a segmented panorama or high-resolution image.  There are a few 
 This is done by using SIFT descriptors, which are 128 element long vectors for each point in the image containing information about the gradients at surrounding pixels.  
 ![left feature detec](uttower_left_descriptor.jpg)  ![right_feature_detec](uttower_right_descriptor.jpg)
 
+### 2: Find K-Nearest Neighbors of Key Points
+By computing a matrix of the distances between the two images using a vectorized numpy approach shown below, I found the 2 nearest neighbors of each key point in the left image.  The keypoints were only considered a putative match if the first neighbor passed the ratio test of first neighbor to second neighbor.  This ratio test is used to weed out points that we are unsure if they match the first neighbor best.  For example, a key point on a plain building will have many nearest neighbors that are close together.  
+```
+def euclidean_dist(X, Y):
+    """
+    Inputs:
+    - X: A numpy array of shape (N, F)
+    - Y: A numpy array of shape (M, F)
+
+    Returns:
+    A numpy array D of shape (N, M) where D[i, j] is the Euclidean distance
+    between X[i] and Y[i].
+    """
+    nrm = np.linalg.norm(X, axis=1, keepdims=True)
+    D = nrm**2 + np.linalg.norm(Y, axis=1, keepdims=True).T**2 - 2* np.dot(X, Y.T)
+    D = np.sqrt(np.clip(D,0,None))
+    return D
+```
+
+### 3: Use RANSAC to estimate Homography Mapping
+
