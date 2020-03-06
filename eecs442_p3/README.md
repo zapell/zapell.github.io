@@ -24,7 +24,7 @@ This is done by using SIFT descriptors, which are 128 element long vectors for e
 ![left feature detec](uttower_left_descriptor.jpg)  ![right_feature_detec](uttower_right_descriptor.jpg)
 
 ### 2: Find K-Nearest Neighbors of Key Points
-By computing a matrix of the distances between the two images using a vectorized numpy approach shown below, I found the 2 nearest neighbors of each key point in the left image.  The keypoints were only considered a putative match if the first neighbor passed the ratio test of first neighbor to second neighbor.  This ratio test is used to weed out points that we are unsure if they match the first neighbor best.  For example, a key point on a plain building will have many nearest neighbors that are close together.  
+I computed a matrix of the distances between the two images using a fast, vectorized numpy approach shown below. Then, I found the 2 nearest neighbors of each key point in the left image.  The keypoints were only considered a putative match if the first neighbor passed the ratio test of first neighbor to second neighbor.  This ratio test is used to weed out points that we are unsure if they match the first neighbor best.  For example, a key point on a plain building will have many nearest neighbors that are close together.  
 ```
 def euclidean_dist(X, Y):
     """
@@ -43,4 +43,15 @@ def euclidean_dist(X, Y):
 ```
 
 ### 3: Use RANSAC to estimate Homography Mapping
+I implemented the RANSAC algorithm, which is essentially a robust approach to least sqaures where the input data is expected to have many outliers.  This outlier problem is common in computer vision.  The matches from RANSAC are lines in the following picture.  
 
+![RANSAC](uttower_matches.jpg)  
+
+### 4: The Fun Part: Combining the Images
+Finally we get to the point where we can combine the images by warping one using the homography matrix found from RANSAC.  The overlapping pixels are averaged between the two and the finale is displayed below.  
+
+![final_uttower](uttower.jpg)
+
+This is a picture of the main clock tower on the University of Michigan's main campus.  Below is another stitched image of a building on campus.  
+
+![final_bbb](bbb.jpg)
