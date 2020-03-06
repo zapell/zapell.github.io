@@ -16,4 +16,10 @@ A few examples are shown below:
 ![6](case_6.png)  
 
 ## Part 2: The Stitching
+Image stitching or photo stitching combines multiple photographic images that have overlapping fields of
+view to produce a segmented panorama or high-resolution image.  There are a few steps to get to the end result and I will go through them in light detail below, showing output when helpful.
+
+### 1: Detect Feature Points in the Images
+This is done by using SIFT descriptors, which are 128 element long vectors for each point in the image containing information about the gradients at surrounding pixels.  
+![left feature detec](uttower_left_descriptor.jpg)  ![right_feature_detec](uttower_right_descriptor.jpg)
 
