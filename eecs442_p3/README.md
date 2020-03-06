@@ -52,6 +52,6 @@ Finally we get to the point where we can combine the images by warping one using
 
 ![final_uttower](uttower.jpg)
 
-This is a picture of the main clock tower on the University of Michigan's main campus.  Below is another stitched image of a building on campus.  
+Below is another stitched image of a building on the University of Michigan's campus.  
 
 ![final_bbb](bbb.jpg)
