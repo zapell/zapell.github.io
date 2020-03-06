@@ -9,7 +9,8 @@ homogeneous coordinates and finding the 3x3 matrix representing the transformati
 
 The red points are the original coordinates, the blue are the homography matrix fitted coordinates, and the green 
 (which are very hard to see) are the original transformed coordinates.  
-A few examples are shown below: 
+A few examples are shown below:  
+
 [!1](case_0.png)  
 [!5](case_5.png)  
 [!6](case_6.png)  
