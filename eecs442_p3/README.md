@@ -11,9 +11,9 @@ The red points are the original coordinates, the blue are the homography matrix 
 (which are very hard to see) are the original transformed coordinates.  
 A few examples are shown below:  
 
-[!1](case_0.png)  
-[!5](case_5.png)  
-[!6](case_6.png)  
+![1](case_0.png)  
+![5](case_5.png)  
+![6](case_6.png)  
 
 ## Part 2: The Stitching
 
