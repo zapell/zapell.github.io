@@ -36,3 +36,7 @@ The class focused on the theory and implementation of state of the art machine l
 [Predicting Diabetes](./final_project/overview.md)
 
 
+### Live betting database
+[Betting](./gambling/overview.md)
+
+
