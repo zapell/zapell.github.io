@@ -15,3 +15,5 @@ Pre and post game data is also scraped for a join later on in the process.
 
 ### Look Ahead
 Currently, I only have framework for NBA and NFL games but it would be very simple to extend to other sports and leagues.
+
+In the future, I want to take a stock market approach to live betting.  Whether that be through arbitrage or options trading techniques, I think there is tremendous opportunity to algorithmically explore the live betting world.
