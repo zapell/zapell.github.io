@@ -6,7 +6,7 @@ Hofburg Imperial Palace, Berlin Cathedral, Hagia Sophia, Gaudi’s Casa Batllo, 
 
 ### Stage 1: Pre-Processing
 Here is an example of what the pre-processing did to a couple of images.
-![here](https://github.com/zapell/EECS445_P2/blob/master/preprocessing_example2.png) 
+![here](./preprocessing_example2.png) 
 
 ### Building the Convolutional Neural Network
 Here is the architecture for the layers of the network as defined by the spec of the project
@@ -22,12 +22,12 @@ where nn is the torch.nn from the PyTorch library.  The weights of the convoluti
 
 We can see what the first-layer activation maps look like for a couple of different monuments to observe what each filter is learning.  You can see some of the features that the activation map picks up.
 
-![y=4](https://github.com/zapell/EECS445_P2/blob/master/CNN_viz1_4.png)
-![y=3](https://github.com/zapell/EECS445_P2/blob/master/CNN_viz1_3.png)
+![y=4](./CNN_viz1_4.png)
+![y=3](./CNN_viz1_3.png)
 
 The preprocessed images the maps are based off are below:
-![y=4](https://github.com/zapell/EECS445_P2/blob/master/CNN_viz0_4.png)
-![y=3](https://github.com/zapell/EECS445_P2/blob/master/CNN_viz0_3.png)
+![y=4](./CNN_viz0_4.png)
+![y=3](./CNN_viz0_3.png)
 
 ### Building the Autoencoder
 The goal of using an autoencoder for this project was to learn the internal structure of the input relative to other data points.  The autoencoder is comprised of an encoder which throws away all irrelevant aspects of the data and keep only what is essential for the decoder to reconstruct the data.  It becomes an unsupervised learning problem in this setting because without the labels it is impossible to directly train the network to learn the true encoder function.
@@ -91,7 +91,7 @@ The decoder function defines the operations for the decoder part of the autoenco
 The model was trained with ADAM optimizer and MSE loss function for 20 epochs.\
 
 One of the cool parts of the autoencoder is the ability to reconstruct images.  The best, worst, and average reconstruction based on MSE for each class of monument is displayed below.
-![recon](https://github.com/zapell/EECS445_P2/blob/master/ae_per_class_perf.png)
+![recon](./ae_per_class_perf.png)
 
 
 ### Autoencoder Classifier
