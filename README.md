@@ -17,6 +17,8 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 
 
 
+### Live betting database (Aug 2020-Present)
+[Betting](./gambling/overview.md)
 
 ### Computer Vision (Jan-Apr 2020)
 [Project 1: Image Alignment](./eecs442_p1/README.md)  
@@ -27,18 +29,15 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.\
 [Project: Landmark Classification](./eecs445_p2/README.md)
 
-### Spotify Analysis (Aug-Dec 2019)
-
-
 ### NBA Salary Analysis (Nov-Dec 2019)
 [NBA](./415_final_project/overview.md)
 
 ### Bayesian Logistic Regression (Nov-Dec 2019)
-
 [Predicting Diabetes](./final_project/overview.md)
 
+### Spotify Analysis (Aug-Dec 2019)
 
-### Live betting database (Aug 2020-Present)
-[Betting](./gambling/overview.md)
+
+
 
 
