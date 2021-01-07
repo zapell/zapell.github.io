@@ -4,7 +4,8 @@
 E-mail: zachapell220@gmail.com  
 Phone: (856) 298-0064  
 [Linkedin](https://www.linkedin.com/in/zach-apell/)  
-![me](./0.jpeg)   
+![me](./0.jpeg)  
+[Resume](./Apell_Zachary_Resume(W21)-edited.pdf)
 
 
 ## About Me
@@ -23,7 +24,7 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 [Project 3: Image Stitching](./eecs442_p3/README.md)
 
 ### Machine Learning
-The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.
+The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.\
 [Project: Landmark Classification](./eecs445_p2/README.md)
 
 ### Spotify Analysis
