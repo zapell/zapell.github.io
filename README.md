@@ -18,27 +18,27 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 
 
 
-### Computer Vision
+### Computer Vision (Jan-Apr 2020)
 [Project 1: Image Alignment](./eecs442_p1/README.md)  
 
 [Project 3: Image Stitching](./eecs442_p3/README.md)
 
-### Machine Learning
+### Machine Learning (Jan-Apr 2019)
 The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.\
 [Project: Landmark Classification](./eecs445_p2/README.md)
 
-### Spotify Analysis
+### Spotify Analysis (Aug-Dec 2019)
 
 
-### NBA Salary Analysis
+### NBA Salary Analysis (Nov-Dec 2019)
 [NBA](./415_final_project/overview.md)
 
-### Bayesian Logistic Regression
+### Bayesian Logistic Regression (Nov-Dec 2019)
 
 [Predicting Diabetes](./final_project/overview.md)
 
 
-### Live betting database
+### Live betting database (Aug 2020-Present)
 [Betting](./gambling/overview.md)
 
 
