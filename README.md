@@ -24,6 +24,7 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 
 ### Machine Learning
 The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.
+[Project: Landmark Classification](./eecs445_p2/README.md)
 
 ### Spotify Analysis
 
