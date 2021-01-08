@@ -13,6 +13,9 @@ The scripts are completely automated and uploaded to the EC2 instance and set to
 Pre and post game data is also scraped for a join later on in the process.
 
 
+Here is a quick snippet with some of the fields for the in game NBA database.
+![snippet](./nba_live_db_ex.png)
+
 ### Look Ahead
 Currently, I only have framework for NBA and NFL games but it would be very simple to extend to other sports and leagues.
 
