@@ -15,12 +15,14 @@ In summer 2019, I interned for Wacker Chemical Corporation, an international che
 
 Outside of work, I am a huge sports junkie, specifically Philadelphia and Michigan sports.  I am also passionate about music and in the future I plan on applying data science to music with the hope of creating algorithmic based music.  If you have any ideas or interest in this, I would love to talk about it!
 
-
+## Projects
+Below are some of the school and personal projects that I have had the pleasure to work on.  There is a wide variety of applications demonstrated in my catalog and I very much enjoy trying and learning from new challenges.
 
 ### Live betting database (Aug 2020-Present)
 [Betting](./gambling/overview.md)
 
 ### Computer Vision (Jan-Apr 2020)
+This course is an introduction to 2D and 3D computer vision. Topics include: cameras models, the geometry of multiple views; shape reconstruction methods from visual cues: stereo, shading, shadow, contours; low-level image processing methodologies such as edge detection, feature detection; mid-level vision techniques (segmentation and clustering); Basic high-level vision problems: face detection, object and scene recognition, object categorization, and human tracking  
 [Project 1: Image Alignment](./eecs442_p1/README.md)  
 
 [Project 3: Image Stitching](./eecs442_p3/README.md)
