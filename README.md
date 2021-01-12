@@ -36,7 +36,7 @@ The class focused on the theory and implementation of state of the art machine l
 [Predicting Diabetes](./final_project/overview.md)
 
 ### Spotify Analysis (Aug-Dec 2019)
-[Spotify](./spotify/readme.MD)
+[Spotify](./spotify/Cluster_spotify.ipynb)
 
 
 
