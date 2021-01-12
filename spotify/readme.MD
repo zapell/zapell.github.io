@@ -1,6 +1,6 @@
 ## Spotify Project
 
-The first step in this project was using the Spotify api to get the data for my personal saved songs. \
+The first step in this project was using the Spotify api to get the data for my personal saved songs.  
 
 You can see the process [here](./)
 
