@@ -37,7 +37,7 @@ The class focused on the theory and implementation of state of the art machine l
 ### Bayesian Logistic Regression (Nov-Dec 2019)
 [Predicting Diabetes](./final_project/overview.md)
 
-### Spotify Analysis (Aug-Dec 2019)
+### Spotify Analysis (Aug-Dec 2019, revisited Jan 2021)
 [Spotify](./spotify/readme.md)
 
 
