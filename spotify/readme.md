@@ -2,7 +2,7 @@
 
 The first step in this project was using the Spotify api to get the data for my personal saved songs.  
 
-You can see the process [here](./)
+You can see the process [here](./get_spotify_data_clean.html)
 
 After getting all the songs and audio features, I clustered my library using PCA for dimensionality reduction and K-means clustering.
 
