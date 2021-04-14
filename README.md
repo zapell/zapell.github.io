@@ -27,7 +27,7 @@ This course is an introduction to 2D and 3D computer vision. Topics include: cam
 
 [Project 3: Image Stitching](./eecs442_p3/README.md)
 
-[Final Research Project](./eecs442_final_project/overview.md)
+[Final Research Project](./442_final_project/overview.md)
 
 ### Machine Learning (Jan-Apr 2019)
 The class focused on the theory and implementation of state of the art machine learning algorithms for large-scale real-world problems.\
