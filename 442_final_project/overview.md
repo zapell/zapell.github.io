@@ -8,7 +8,9 @@ You can view our complete final paper [here](./EECS442_FinalProject.pdf). In it 
 
 #### Analysis
 Our bounding box implementation extracts each character in a fairly homogeneous manner (128x128) with negligible errors. Our dataset of 62,000 images was broken into training, validation and testing sets. Our model was fairly robust and achieved an accuracy of 86%. After training our dataset with 40 epochs, we were able to minimize the loss to 0.26. 
+
 Our Model  detects and classifies most characters perfectly, and seems to have problems with characterising between very similar characters such as the letter ‘o’ and the number 0, or the letter ‘e’ and the number 3. 
+
 In addition to this, our model fails to classify punctuation at the moment. Although we can detect punctuation marks using our character detection pipeline, currently our classifier is not trained to classify those characters. This is something that could be solved quite easily by just expanding our training dataset to include punctuation marks such as commas, periods, quote marks etc.
 
 
