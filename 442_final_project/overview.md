@@ -14,5 +14,5 @@ Our Model  detects and classifies most characters perfectly, and seems to have p
 In addition to this, our model fails to classify punctuation at the moment. Although we can detect punctuation marks using our character detection pipeline, currently our classifier is not trained to classify those characters. This is something that could be solved quite easily by just expanding our training dataset to include punctuation marks such as commas, periods, quote marks etc.
 
 
-
+#### Code
 Additionally, the [code](./CNN.ipynb) to train and build the CNN was created using Google Colab.
