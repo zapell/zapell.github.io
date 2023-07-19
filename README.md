@@ -22,7 +22,7 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 ## Projects
 Below are some of the school and personal projects that I have had the pleasure to work on.  There is a wide variety of applications demonstrated in my catalog and I very much enjoy trying and learning from new challenges.
 
-### Live betting database (Aug 2020-Present)
+### Live betting database (Aug 2020-Jan 2022)
 [Betting](./gambling/overview.md)
 
 ### Computer Vision (Jan-Apr 2020)
