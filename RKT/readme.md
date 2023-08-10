@@ -18,3 +18,8 @@ The result of this process was a 75% conversion lift in the top 3 deciles of lea
 
 ### Prioritization Engine Model (PEM)
 
+While the dial priority model focused on leads before they reach bankers, the PEM project focused on loans after they were in the bankers pipeline.  Our business partners wanted to know if we could identify loans that had been neglected and apply an escalation treatment to gain conversion.  This process had been in play for post-credit pull when we know a lot more about the client, but the business had struggled with pre-credit treatment for a long time.
+
+After a move to a new operations system, the Revenue Operations team lost the ability to set up a system based test.  This forced me to design a complex SQL query to identify loans in the control group that would have been eligible for treatment since not all loans get neglected.  This query captured 95% of all eligible for escalation loans.  We ensured that the test and control group had an even distribution of lead grade.
+
+We then built a model to identify loans most likely to reach PAL, the next step after a credit pull.  The loans at the top deciles from this model converted at over 2x the conversion of the non treated loans, meaning our model was identifying that portion of neglected loans that should be escalated and keeping out the neglected loans that would be a waste of time.
