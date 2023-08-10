@@ -1,3 +1,5 @@
+## Dial Prioritization
+
 One of the projects I have been focused on is the Dial Prioritization models for unallocated leads.  Specifically, the purchase and refinance retention models.
 
 The project started out with the question: how can we better call potential clients?  What seemed like a simple question becomes more complicated when considering the many different types of clients that we call.  Purchase differs from refinance and both differ from leads that are escalated.  What happens if a banker has clients from different groups in their same pipeline?
@@ -11,3 +13,6 @@ Another key area of this project was the production ready preprocessing.  The pr
 I trained different models and Bayesian hyperparameter tuning jobs to determine the best model.  In order to calibrate the model outputs, I trained another model using Platt Calibration which is a Logistic Regression model trained on the output of the XGBoost model. The data for this second model was the validation set and a portion of the test set, leaving out a portion of the test set to be unseen by either model.  This second model gave us the true probabilities and allowed us to compare different populations of leads against one another.
 
 The result of this process was a 75% conversion lift in the top 3 deciles of leads and an improvement of 47% in our net lead to allocate metric, meaning more leads were getting assigned to bankers.
+
+## Prioritization Engine Model (PEM)
+
