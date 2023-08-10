@@ -1,4 +1,6 @@
-## Dial Prioritization
+## Rocket Mortgage Work
+
+### Dial Prioritization
 
 One of the projects I have been focused on is the Dial Prioritization models for unallocated leads.  Specifically, the purchase and refinance retention models.
 
@@ -14,5 +16,5 @@ I trained different models and Bayesian hyperparameter tuning jobs to determine 
 
 The result of this process was a 75% conversion lift in the top 3 deciles of leads and an improvement of 47% in our net lead to allocate metric, meaning more leads were getting assigned to bankers.
 
-## Prioritization Engine Model (PEM)
+### Prioritization Engine Model (PEM)
 
