@@ -9,7 +9,13 @@ Phone: (856) 298-0064
 
 
 ## About Me
-I am currently a Data Scientist on the Machine Learning Banking team at Rocket Mortgage.  Our team's goal is to optimize the lead allocation and mortgage banking space.  This includes lead prioritization and how bankers interact with loans as they move through their pipeline.  There are some more details [here](./RKT/readme.md) 
+As a strategic problem solver, I develop data products using the Data Science lifecycle, machine learning, and statistical analysis. At the core of my success is my ability to effectively collaborate with business partners, data engineers, and machine learning engineers to create reliable production solutions with domain specific expertise. By clearly translating business challenges from technical analysis to digestible insights, I provide instant value to cross-functional teams. Swiftly learning new technologies and languages within the scope of a full machine learning problem energizes me.
+
+In the fall of 2024 I will be pursuing a masters in biostatistics.
+
+## Professional Experience
+
+I have been a Data Scientist on the Machine Learning Banking team at Rocket Mortgage.  Our team's goal was to optimize the lead allocation and mortgage banking space.  This includes lead prioritization and how bankers interact with loans as they move through their pipeline.  There are some more details [here](./RKT/readme.md) 
 
 At Freedom Mortgage, I was a Data Engineer and Data Scientist on the Data Science team at Freedom Mortgage.  By moving through different teams such as ETL, Data Governance, Marketing Analytics, and the Intelligent Automative Initiative, I have developed an enterprise wide understanding of the data flow which has been an immense help in my ability to get the right data for modelling.  Additionally, I have met with business leaders to understand problem areas and work with them to develop ways that our team can provide business value.
 
