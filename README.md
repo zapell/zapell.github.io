@@ -29,7 +29,7 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 Below are some of the school and personal projects that I have had the pleasure to work on.  There is a wide variety of applications demonstrated in my catalog and I very much enjoy trying and learning from new challenges.
 
 ### Fast Matrix Normal R Package (Nov - Dec 2024)
-We developed [this R package](https://github.com/ziyuliu1999/fastMN) that decreased the complexity of computing the PDF and random sampling of the matrix normal distribution. My major contribution was creating the PDF function using Cholesky decomposition, which reduced the complexity from \( O(n^3p^3) \) to \( O(n^3p^3) \).  
+We developed [this R package](https://github.com/ziyuliu1999/fastMN) that decreased the complexity of computing the PDF and random sampling of the matrix normal distribution. My major contribution was creating the PDF function using Cholesky decomposition, which reduced the complexity from O(n^3 * p^3) to O(n^3 + p^3).  
 
 ### Live betting database (Aug 2020-Jan 2022)
 [Betting](./gambling/overview.md)
