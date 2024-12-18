@@ -1,5 +1,5 @@
 ## Professional Experience
-I have been a Data Scientist on the Machine Learning Banking team at Rocket Mortgage.  Our team's goal was to optimize the lead allocation and mortgage banking space.  This includes lead prioritization and how bankers interact with loans as they move through their pipeline.  There are some more details [here](./RKT/readme.md) 
+I have been a Data Scientist on the Machine Learning Banking team at Rocket Mortgage.  Our team's goal was to optimize the lead allocation and mortgage banking space.  This includes lead prioritization and how bankers interact with loans as they move through their pipeline.  There are some more details [here](../RKT/readme.md) 
 
 At Freedom Mortgage, I was a Data Engineer and Data Scientist on the Data Science team at Freedom Mortgage.  By moving through different teams such as ETL, Data Governance, Marketing Analytics, and the Intelligent Automative Initiative, I have developed an enterprise wide understanding of the data flow which has been an immense help in my ability to get the right data for modelling.  Additionally, I have met with business leaders to understand problem areas and work with them to develop ways that our team can provide business value.
 
