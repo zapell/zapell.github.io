@@ -15,7 +15,7 @@ As a strategic problem solver, I develop data products using the Data Science li
 
 
 ## Professional Experience
-
+I have worked as a data scientist for 4 years. More details are [here](./Prof_experience/README.md).  
 
 Outside of work, I am a huge sports junkie, specifically Philadelphia and Michigan sports.  I am also passionate about music and in the future I plan on applying data science to music with the hope of creating algorithmic based music.  If you have any ideas or interest in this, I would love to talk about it!
 
