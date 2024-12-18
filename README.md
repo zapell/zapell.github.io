@@ -9,12 +9,12 @@ Phone: (856) 298-0064
 
 
 ## About Me
+I am a pursuing a masters in biostatistics at the University of Michigan School of Public Health with an anticipated graduation date of May 2026. 
+
 As a strategic problem solver, I develop data products using the Data Science lifecycle, machine learning, and statistical analysis. At the core of my success is my ability to effectively collaborate with business partners, data engineers, and machine learning engineers to create reliable production solutions with domain specific expertise. By clearly translating business challenges from technical analysis to digestible insights, I provide instant value to cross-functional teams. Swiftly learning new technologies and languages within the scope of a full machine learning problem energizes me.
 
-In the fall of 2024 I will be pursuing a masters in biostatistics.
 
 ## Professional Experience
-
 I have been a Data Scientist on the Machine Learning Banking team at Rocket Mortgage.  Our team's goal was to optimize the lead allocation and mortgage banking space.  This includes lead prioritization and how bankers interact with loans as they move through their pipeline.  There are some more details [here](./RKT/readme.md) 
 
 At Freedom Mortgage, I was a Data Engineer and Data Scientist on the Data Science team at Freedom Mortgage.  By moving through different teams such as ETL, Data Governance, Marketing Analytics, and the Intelligent Automative Initiative, I have developed an enterprise wide understanding of the data flow which has been an immense help in my ability to get the right data for modelling.  Additionally, I have met with business leaders to understand problem areas and work with them to develop ways that our team can provide business value.
@@ -27,6 +27,9 @@ Outside of work, I am a huge sports junkie, specifically Philadelphia and Michig
 
 ## Projects
 Below are some of the school and personal projects that I have had the pleasure to work on.  There is a wide variety of applications demonstrated in my catalog and I very much enjoy trying and learning from new challenges.
+
+### Fast Matrix Normal R Package (Nov - Dec 2024)
+We developed [this R package](https://github.com/ziyuliu1999/fastMN) that decreased the complexity of computing the PDF and random sampling of the matrix normal distribution. My major contribution was creating the PDF function using Cholesky decomposition, which reduced the complexity from \[O(n^3p^3)\] to \[O(n^3 + p^3)\].  
 
 ### Live betting database (Aug 2020-Jan 2022)
 [Betting](./gambling/overview.md)
