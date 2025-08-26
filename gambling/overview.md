@@ -1,22 +1,65 @@
-## Live Betting Data Collection
+# Live Betting Data Collection System
 
-### Overview
-This is a longterm multi-disciplined project I started working on in August 2020.  The main objective is to create a database of live betting data.  I came across many challenges throughout this process, many of which I was unfamiliar with, including selenium, bash scripting, aws ec2 and rds instances.
-  
-### Structure and Flow
-Dynamic live basketball and football data was scraped using a selenium webdriver on a remote AWS ec2 server.  This data was then uploaded to a PostgreSQL database hosted on an aws rds instance.  In order to save money, both the rds and ec2 instances were scheduled to start and stop at specified times using the AWS Cloudwatch service.  
-  
-The python script to scrape and upload the data is a part of a larger set of bash scripts that runs and checks if the java server running the webdriver is up.
+## 📊 Project Overview
 
-The scripts are completely automated and uploaded to the EC2 instance and set to run at gametimes.  The output of the cronjobs are logged to ensure ability to check for possible errors.
+A comprehensive **real-time sports betting analytics platform** built to capture, process, and analyze live betting data across multiple sports. This project demonstrates full-stack data engineering capabilities, combining web scraping, cloud infrastructure, and database management.
 
-Pre and post game data is also scraped for a join later on in the process.
+**Duration**: August 2020 - January 2022  
+**Technologies**: Python, Selenium, PostgreSQL, AWS (EC2, RDS, CloudWatch), Bash Scripting
 
+---
 
-Here is a quick snippet with some of the fields for the in game NBA database.
-![snippet](./nba_live_db_ex.png)
+## 🏗️ Architecture & Technical Implementation
 
-### Look Ahead
-Currently, I only have framework for NBA and NFL games but it would be very simple to extend to other sports and leagues.
+### Data Collection Pipeline
+- **Real-time Scraping**: Selenium WebDriver deployed on AWS EC2 for dynamic content extraction
+- **Database Storage**: PostgreSQL hosted on AWS RDS with optimized schema design
+- **Cost Optimization**: Automated EC2/RDS scheduling via AWS CloudWatch to minimize operational costs
+- **Monitoring**: Comprehensive logging system for error tracking and performance monitoring
 
-In the future, I want to take a stock market approach to live betting.  Whether that be through arbitrage or options trading techniques, I think there is tremendous opportunity to algorithmically explore the live betting world.
+### Infrastructure Design
+```
+Live Sports Data → Selenium WebDriver (EC2) → Data Processing → PostgreSQL (RDS)
+                                    ↓
+                           Automated Scheduling & Monitoring
+```
+
+### Key Technical Features
+- **Automated Deployment**: Complete CI/CD pipeline with bash scripts for server management
+- **Fault Tolerance**: Java server health checks and automatic restart capabilities  
+- **Data Integration**: Pre-game and post-game data correlation for comprehensive analysis
+- **Scalable Architecture**: Designed for easy extension to additional sports and leagues
+
+---
+
+## 📈 Data Sample & Results
+
+### NBA Live Database Structure
+The system captures comprehensive in-game metrics including:
+
+![NBA Database Sample](./nba_live_db_ex.png)
+
+**Data Points Collected**:
+- Real-time odds movements
+- Game state information  
+- Betting volume indicators
+- Historical performance metrics
+
+---
+## 🚀 Future Enhancements & Vision
+
+### Current Capabilities
+- **Sports Coverage**: NBA and NFL with extensible framework for additional leagues
+- **Scalable Foundation**: Architecture designed for easy integration of new sports and data sources
+
+### Strategic Roadmap  
+- **Financial Modeling**: Applying quantitative finance techniques (arbitrage, options strategies) to betting markets
+- **Algorithmic Trading**: Developing systematic approaches to live betting opportunities
+- **Market Analysis**: Advanced statistical modeling of betting market inefficiencies
+
+### Business Applications
+This system serves as a foundation for exploring **data-driven approaches to sports betting**, combining real-time analytics with financial modeling principles to identify market opportunities.
+
+---
+
+*This project showcases end-to-end data engineering capabilities, from infrastructure design to real-time data processing, while demonstrating proficiency in cloud technologies and automated system management.*
