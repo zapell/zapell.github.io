@@ -1,18 +1,16 @@
 # Zach Apell
 ## Biostatistics Graduate Student & Data Scientist
 
-<div align="center">
+## Contact Information
 
-![me](./0.jpeg)
+<p align="center">
+  <img src="./0.jpeg" alt="me" width="200"/>
+</p>
 
-**Contact Information**
 - 📧 Email: [zachapell220@gmail.com](mailto:zachapell220@gmail.com)
 - 📞 Phone: (856) 298-0064
 - 💼 LinkedIn: [zach-apell](https://www.linkedin.com/in/zach-apell/)
 - 📄 Resume: [Download](./Apell_ZacharyCV(0825).docx)
-
-</div>
-
 ---
 
 ## About Me
