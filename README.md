@@ -117,7 +117,10 @@ Personal music library analysis using unsupervised learning and audio features.
 - **Data Source**: Spotify API with personal listening history
 - **Techniques**: PCA dimensionality reduction and K-means clustering
 - **Visualization**: Interactive Tableau dashboards
-- [**Explore Music Data →**](./spotify/readme.md)---
+<!-- Fixed: Separated malformed link suffix (---) that was concatenated without proper line break -->
+- [**Explore Music Data →**](./spotify/readme.md)
+
+---
 
 ## Technical Skills & Education
 
