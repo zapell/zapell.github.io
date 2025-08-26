@@ -9,7 +9,7 @@
 - 📧 Email: [zachapell220@gmail.com](mailto:zachapell220@gmail.com)
 - 📞 Phone: (856) 298-0064
 - 💼 LinkedIn: [zach-apell](https://www.linkedin.com/in/zach-apell/)
-- 📄 Resume: [Download PDF](./Apell_Zachary_Resume(jul23).pdf)
+- 📄 Resume: [Download](./Apell_ZacharyCV(0825).docx)
 
 </div>
 
