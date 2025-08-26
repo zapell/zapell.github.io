@@ -1,5 +1,5 @@
 # Zach Apell
-## Data Scientist & Biostatistics Graduate Student
+## Biostatistics Graduate Student & Data Scientist
 
 <div align="center">
 
